@@ -14,38 +14,9 @@ import model.InventoryModel;
 
 public class InventoryDaoImpl implements InventoryDao{
 
-	@Override
-	public InventoryModel search(String serialNumber) {
-		// TODO Auto-generated method stub
-		String sql="select * from guitar where serialNumber=?";
-		JDBC jdbc=new JDBC();
-		Connection conn=jdbc.getConnection();
-		
-		PreparedStatement ps;
-		try {
-			ps = conn.prepareStatement(sql);
-			ps.setString(1, serialNumber);
-			ResultSet rs=ps.executeQuery();
-			InventoryModel inventory=new InventoryModel();
-			while(rs.next()){
-				inventory.addGuitar(serialNumber, rs.getDouble("price"), rs.getString("builder"),
-									rs.getString("model"),rs.getString("type"), rs.getString("bacwood"), 
-									rs.getString("topwood"));
-				
-				
-			}
-			return inventory;
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}finally{
-			jdbc.closeConnection(conn);
-		}
-		return null;
-	}
 
 	@Override
-	public List<Guitar> search2(String serialNumber) throws Exception {
+	public List<Guitar> search(String serialNumber) throws Exception {
 		// TODO Auto-generated method stub
 		String sql="select * from guitar where serialNumber=?";
 		JDBC jdbc=new JDBC();
