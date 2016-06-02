@@ -86,7 +86,7 @@ public class GuitarSearchServlet extends HttpServlet {
 		  	InventoryDao dao=new InventoryDaoImpl();
 		  	
 		  	try {
-				for(Guitar guitar:dao.search2(serialNumber)){
+				for(Guitar guitar:dao.search(serialNumber)){
 					inventory.addGuitar(guitar.getSerialNumber(),
 										guitar.getPrice(), 
 										guitar.getSpec().getBuilder(),
