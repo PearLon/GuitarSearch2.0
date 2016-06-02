@@ -62,7 +62,7 @@ public class InventoryDaoImpl implements InventoryDao{
 									rs.getString("topwood"));
 					list.add(guitar);	
 			}
-			return null;
+			return list;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
