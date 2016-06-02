@@ -7,6 +7,5 @@ import model.InventoryModel;
 
 public interface InventoryDao {
 	
-	public InventoryModel search(String serialNumber)throws Exception;
-	public List<Guitar> search2(String serialNumber)throws Exception;
+	public List<Guitar> search(String serialNumber)throws Exception;
 }
